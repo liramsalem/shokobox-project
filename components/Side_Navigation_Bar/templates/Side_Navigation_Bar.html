@@ -1,0 +1,23 @@
+
+{% block Side_Navigation_Bar %}
+
+    {% block page_body_css %}
+    <link rel="stylesheet" href="{{ url_for('Side_Navigation_Bar.static', filename='css/Side_Navigation_Bar.css') }}"/>
+    {% endblock %}
+
+
+    <div class="sideNavigationBar" id="sideNavigationBar" dir="ltr">
+        <br><br>
+        <a id="X" href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9746;</a>
+        <a href="/Home" >  ראשי</a>
+        {%  if session.user_name %}
+            <a href="/My_Orders" >  ההזמנות שלי</a>
+        {% endif %}
+        <a href="/Cakes" >  העוגות שלי</a>
+        <a href="/CustomizedCake"> עיצוב אישי</a>
+        <a href="/Classes">  סדנאות </a>
+        <a href="/Question">  שאלות תשובות </a>
+        <a href="/Contact">  צור קשר </a>
+        <a href="/AboutUs">  אודות </a>
+    </div>
+{% endblock %}

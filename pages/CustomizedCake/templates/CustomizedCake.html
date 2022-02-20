@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Customize Page' %}
+
+{% block page_body_css %}
+    <link rel="stylesheet" href="{{ url_for('CustomizedCake.static', filename='css/CustomizedCake.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+<div class="main" id="main" dir="rtl">
+        <div class="header" >
+            <h1>עוגה בעיצוב אישי </h1>
+            <p>מחירי בסיס: <br>
+                300 ש"ח לקומה אחת <br>
+                400 ש"ח לשתי קומות <br>
+                500 ש"ח לשלוש קומות <br>
+            </p>
+        </div>
+
+        {% if msg=='sign_in' %}
+            <p class="msg"> על מנת להוסיף לסל יש להתחבר לאתר! </p>
+        {% endif %}
+
+        <form  id="customizedform" action="/CustomizedCake" method="POST">
+            <table width="80%"  border="0" align="center">
+                <tr align="center">
+                    <td><p class="title_name"> צורה </p></td>
+                    <td><p class="title_name"> תוספות </p></td>
+                    <td><p class="title_name"> טעם הקרם </p></td>
+                    <td><p class="title_name"> כיתוב </p></td>
+                    <td><p class="title_name"> גודל </p></td>
+
+                </tr>
+                <tr align="center">
+                    <td><img class="icone" src ="CustomizedCake/media/shape_icon_customizesPage.png" alt="cake's shape" style="width: 100px; float: center;" ></td>
+                    <td><img class="icone" src ="CustomizedCake/media/extra_icon_customizesPage.png" alt="cake's extra" style="width: 100px; float: center;" ></td>
+                    <td><img class="icone" src ="CustomizedCake/media/taste_icon_customizesPage.png" alt="cake's taste" style="width: 100px; float: center;" ></td>
+                    <td><img class="icone" src ="CustomizedCake/media/caption_icon_customizesPage.png" alt="cake's caption" style="width: 100px; float: center;"></td>
+                    <td><img class="icone" src ="CustomizedCake/media/size_icon_customizesPage.png" alt="cake's size" style="width: 100px; float: center;" > </td>
+                </tr>
+                <tr>
+                {% if msg=='error' %}
+                    <p class="msg_to_user"> נא למלא את כל האפשרויות </p>
+                {% endif %}
+
+                    <td width="20%" height="150%" align="center">
+                        <div class="Option">
+                            {% for entry in shape_entries %}
+                                <input type="radio" id="{{ entry[0] }}" name="shape" value="{{ entry[1] }}">
+                                <label for="{{ entry[0] }}">{{ entry[1] }}</label><br>
+                            {% endfor %}
+                        </div>
+                    </td>
+                    <td width="20%" align="center">
+                        <div class="Option">
+                            {% for entry in extra_entries %}
+                                <input type="radio"  name="extra" value="{{ entry[1] }}">
+                                <label for="{{ entry[0] }}">{{ entry[1] }}</label><br>
+                            {% endfor %}
+                        </div>
+                    </td>
+                    <td width="20%" height="150%" align="center" >
+                        <div class="Option">
+                            {% for entry in flavor_entries %}
+                                <input type="radio" name="taste" value="{{ entry[1] }}">
+                                <label for="{{ entry[0] }}">{{ entry[1] }}</label><br>
+                            {% endfor %}
+                        </div>
+                    </td>
+                    <td width="20%" height="150%" align="center" >
+                        <div class="Option">
+                            {% for entry in language_entries %}
+                                <input type="radio" name="caption" value="{{ entry[1] }}">
+                                <label for="{{ entry[0] }}">{{ entry[1] }}</label><br>
+                            {% endfor %}
+                        </div>
+                    </td>
+                    <td width="20%" height="150%" align="center" >
+                        <div class="Option">
+                            {% for entry in size_entries %}
+                                <input type="radio" name="size" value="{{ entry[1] }}">
+                                <label for="{{ entry[0] }}">{{ entry[1] }}</label><br>
+                            {% endfor %}
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5" align="center">
+                        <p class="title_name" >כתבו לנו:</p>
+                        <textarea id="textarea_contact" name="comment" cols="70" rows="10" placeholder="כאן המקום לכתוב רגישות לאלרגיות, הכיתוב של התמונה וכל בקשה מיוחדת..." dir="rtl"></textarea><br><br>
+                        <input type="hidden" name="typeofcake" value="customized">
+                        <button id="add_to_cart_btn" class="btn" type="submit" > הוספה לסל</button> <br><br>
+
+
+                    </td>
+            </tr>
+        </table>
+    </form>
+
+
+                <div class="gallery">
+                        {% for entry in gallery_entries %}
+                            <div class= "image-box">
+                                <img src="{{ entry[1] }}" style="width: 200px; ">
+                            </div>
+                        {% endfor %}
+                </div>
+    </div>
+{% endblock %}
+

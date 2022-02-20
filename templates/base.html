@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+{# <html lang="{{ page_lang|default("en", true) }}">#}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+    <head>
+        {# Title #}
+        <title>{%  block  page_head_title %}{% endblock %}</title>
+    </head>
+
+    <body {% block body %} {% endblock %}>
+
+        {% block page_bodyGeneral_css %}
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}"/>
+            <link rel="stylesheet" href="{{ url_for('Side_Navigation_Bar.static', filename='css/Side_Navigation_Bar.css') }}"/>
+            <link rel="stylesheet" href="{{ url_for('Top_Navigation_Bar.static', filename='css/Top_Navigation_Bar.css') }}"/>
+            <link rel="stylesheet" href="{{ url_for('Footer.static', filename='css/Footer.css') }}"/>
+        {% endblock %}
+
+        {% block page_bodyGeneral_js %}
+           <script src="{{ url_for('Side_Navigation_Bar.static', filename='js/Side_Navigation_Bar.js') }}"></script>
+        {% endblock %}
+
+        {% block page_body_css %} {% endblock %}
+
+        {% block page_body_js %} {% endblock %}
+
+        {% block page_body_header %}
+            {% include 'Side_Navigation_Bar.html' %}
+            {% include 'Top_Navigation_Bar.html' %}
+        {% endblock %}
+
+        {% block page_body_main_content %} {% endblock %}
+
+        {% block page_body_footer %}
+            {% include 'Footer.html' %}
+        {% endblock %}
+
+
+    </body>
+
+</html>

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'My_Orders' %}
+
+{% block page_body_css %}
+    <link rel="stylesheet" href="{{ url_for('My_Orders.static', filename='css/My_Orders.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+<div class="main" id="main" dir="rtl">
+        <div class="header" >
+            <h1 id="header" > היסטוריית הזמנות </h1>
+        </div>
+        <p id="header_txt" > על מנת לראות את פרטי ההזמנה לחץ על מספר ההזמנה</p>
+        <br><br>
+
+             <table width="50%"  border="1" align="center">
+             <tr>
+                <th class="table" width="20%"> <label class="col">מספר הזמנה</label> </th>
+                <th class="table" width="40%" > <label class="col" id="pd_t">תאריך</label> </th>
+                <th class="table" width="15%" > <label class="col">סה"כ</label> </th>
+            </tr>
+            {% for order_id in all_order_id %}
+            <tr>
+                <td align="center">
+                    <a href="Order_Details?order_id={{ order_id[0] }}" class="text"> <p class="title_text"> <b> {{ order_id[0] }} </b> </p> </a>
+                </td>
+                <td align="center" > {{ order_id[1] }}</td>
+                <td align="center">
+                    {{ order_id[2] }} ₪
+                </td>
+            </tr>
+            {% endfor %}
+            </table>
+
+    </div>
+{% endblock %}
+
+

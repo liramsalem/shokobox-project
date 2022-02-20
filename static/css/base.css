@@ -1,0 +1,49 @@
+@import "variables.css";
+
+/** { box-sizing: border-box; }*/
+
+/*body {*/
+/*    margin: 0;*/
+/*    font-family: var(--xsite-font-family);*/
+/*}*/
+
+/*a[href] {*/
+/*    color: var(--link-color);*/
+/*}*/
+
+/*a[href]:visited {*/
+/*    color: var(--visited-link-color);*/
+/*}*/
+
+/*a[href]:active {*/
+/*    color: var(--active-link-color);*/
+/*}*/
+
+body{
+    background-color: #EDE9E2;
+    font-family: Calibri, serif;
+    font-size: 15px;
+    color: rgb(199, 146, 116);
+}
+
+.header {
+  color: rgb(148, 102, 86);
+  width: 50%;
+  text-align: center;
+  margin-right: 28%;
+}
+
+.msg_to_user{
+    color: rgb(183, 54, 64);
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 6%;
+}
+
+
+@media only screen and (max-height: 450px) {
+  .main {font-size:10px;}
+}
+
+

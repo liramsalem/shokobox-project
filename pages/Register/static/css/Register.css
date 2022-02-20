@@ -1,0 +1,96 @@
+
+* {box-sizing: border-box;}
+
+
+/* Style the input container */
+.input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Style the form icons */
+.icon {
+  padding: 10px;
+  background: rgb(199, 146, 116);
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Style the input fields */
+.input-field {
+  width: 35%;
+  padding: 10px;
+  outline: none;
+  text-align: right;
+}
+
+.input-field:focus {
+  border: 2px solid rgb(199, 146, 116);
+}
+
+.input-field i {
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    transition: 0.5s;
+    font-size: 1.1rem;
+
+  }
+
+  #eb_text{
+    margin-left: 12%;
+  }
+
+  .btn {
+    font-size: 15px;
+    width: 25%;
+    opacity: 0.9;
+    text-align: center;
+    margin-left: 55px;
+  }
+
+.btn {
+  cursor: pointer;
+  box-shadow: 0 1vh 2vh 0 rgba(0,0,0,0.5);
+  background-color: rgba(255, 255, 255, 0.795);
+  color: rgb(148, 102, 86);
+  font-family: Calibri, serif;
+  font-size: 15px;
+  border-radius: 12px;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: none;
+  padding: 10px 24px;
+  width: 25%;
+  opacity: 0.9;
+  text-align: center;
+  margin-left: 55px;
+}
+
+.btn:hover {
+   background-color: rgb(225, 176, 156);
+}
+
+.main{
+  margin-top: 5%;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .img1{
+     width:250px;
+     height:50px;
+  }
+  .btn{
+    width: 40%;
+  }
+}
+
+
+
+
+
+

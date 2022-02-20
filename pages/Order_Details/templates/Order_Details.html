@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Order_Details' %}
+
+{% block page_body_css %}
+    <link rel="stylesheet" href="{{ url_for('Order_Details.static', filename='css/Order_Details.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+    <div class="main" id="main" dir="rtl">
+        <div class="header" >
+            <h1 id="header" > פרטי הזמנה מספר {{ order_id }}  </h1>
+        </div>
+
+        <br><br>
+             <table width="50%"  border="1" align="center">
+             <tr>
+                <th class="table" width="40%" > <label class="col" id="pd_t">מוצר</label> </th>
+                <th class="table" width="15%" > <label class="col">כמות</label> </th>
+            </tr>
+            {% for entry in res %}
+            <tr>
+                <td class="headerCart">
+                    <div class="product-title">
+                        {% if entry[0]==10 %}
+                            <p> עוגה מעוצבת- {{  entry[0]  }} </p>
+                            {% else %}
+                                {{  entry[0]  }}
+                        {% endif %}
+                    </div>
+                </td>
+                <td align="center"> {{ entry[1] }}</td>
+            </tr>
+            {% endfor %}
+            </table>
+
+
+    </div>
+{% endblock %}
+
+

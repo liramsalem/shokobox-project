@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'My Story' %}
+
+
+{% block page_body_css %}
+    <link rel="stylesheet" href="{{ url_for('AboutUs.static', filename='css/AboutUs.css') }}"/>
+{% endblock %}
+
+
+{% block page_body_js %}
+    <script src="{{ url_for('AboutUs.static', filename='js/AboutUs.js') }}"></script>
+{% endblock %}
+
+
+{% block page_body_main_content %}
+    <div class="main" id="main" dir="rtl" >
+   <div class="header">
+       <h1 id="header_about_as"> מי אני? </h1>
+   </div>
+
+    <div class="box_left" >
+        <img id="liorPhoto" src="AboutUs/media/orSpitz.png" alt= "my picture">
+    </div>
+
+    <div class="box_right" ><br>
+        <p id="writer_text"><b></b></p>
+        <div class="aboutMe" id="aboutMe">
+            <p class="aboutMe">
+אני ליאור אביב, קונדיטורית בת 20, את אהבתי למטבח רכשתי מסבתי בגיל 8.                      <br>
+הייתי ילדה מאוד עסוקה עם הרבה חוגים ותחביבים, אך האפייה שבתה את ליבי יותר מכל השאר.                    <br>
+ביום הולדתי ה-16, אמא שלי לקחה אותי לסדנת זילוף וכולם התלהבו מהעוגות שיצרתי.                      <br>
+התחלתי לפרסם אותם באינסטגרם- וכך קיבלתי את הזמנה הראשונה שלי.                      <br>
+              עם הזמן, התחילו להזמין יותר ויותר לקוחות, והחלטתי להפוך את האהבה שלי לעסק מקצועי.<br>
+             כיום אני עובדת באופן רצוף בהכנת עוגות הדגל שלי ובהזמנות עוגות בעיצוב אישי ובנוסף מעבירה סדנאות קבוצתיות ואישיות.    <br>
+             מוזמנים להזמין מן העוגות שלי ולספר לי איך היה בעמוד האינסטגרם שלי :)    <br>
+             ולעולם אל תשכחו- רק מי שמעז מצליח!
+            </p>
+        </div>
+
+        <div class="Order_cake_button" dir="rtl">
+                <br> <button class="Order_button_pages" onclick="window.location.href='/Cakes'"> לחצו כאן לראות את העוגות שלי ! </button>
+        </div>
+
+    </div>
+    </div>
+{% endblock %}
+

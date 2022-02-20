@@ -1,0 +1,65 @@
+  <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Sign In' %}
+
+{% block page_body_css %}
+    <link rel="stylesheet" href="{{ url_for('SignIn.static', filename='css/SignIn.css') }}"/>
+{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('SignIn.static', filename='js/SignIn.js') }}"></script>
+{% endblock %}
+
+
+{% block page_body_main_content %}
+    <div class="main" id="main" >
+   <table width="100%"  border="0" align="center" >
+         <tr align="center">
+            <td colspan = "3">
+                {% if msg=='error' %}
+                    <p class="msg_to_user"> שם המשתמש או הסיסמא אינם נכונים </p>
+                {% endif %}
+
+                {% if msg=='sign_in_to_add_cart' %}
+                    <p class="msg_to_user"> על מנת להוסיף לסל הקניות יש להתחבר לאתר </p>
+                {% endif %}
+                <br>
+            </td>
+         </tr>
+      <tr >
+          <td width="45%" height="150%" align="center">
+              <h1>!כיף שחזרת לממלכה שלי  </h1>
+              <h2>:) בוא תתחיל לבחור לך עוגות </h2>
+              <img class="img1" src ="SignIn/media/signPage.jpeg" alt="pic" width="500" height="150" >
+          </td>
+          <td width="10%"></td>
+          <td width="45%" height="150%">
+              <form id="signinform" action="/SignIn_form" method="post">
+
+                  <div class="input-container">
+                    <i class="fa fa-envelope icon"></i>
+                    <input class="input-field" id="email"  type="text" placeholder="* אימייל" name="email" required>
+                  </div>
+
+                  <div class="input-container">
+                    <i class="fa fa-key icon"></i>
+                    <input class="input-field" id="password" type="password" placeholder="* סיסמא" name="psw" required>
+                  </div>
+
+                  <button onclick="validatesigninForm()" class="btn"> <b> התחבר </b></button>
+              </form>
+
+
+                  <h2 id="eb_text"> עדיין לא רשום? </h2>
+                  <button class="btn" onclick="window.location.href='/Register'"> <b> הירשם עכשיו </b> </button>
+
+          </td>
+      </tr>
+    </table>
+    </div>
+{% endblock %}
+
+

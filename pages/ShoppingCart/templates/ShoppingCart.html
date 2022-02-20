@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Shopping Cart' %}
+
+{% block body %} onload="writer_text()" {% endblock %}
+
+{% block page_body_css %}
+    <link rel="stylesheet" href="{{ url_for('ShoppingCart.static', filename='css/ShoppingCart.css') }}"/>
+{% endblock %}
+
+
+{% block page_body_js %}
+    <script src="{{ url_for('ShoppingCart.static', filename='js/ShoppingCart.js') }}"></script>
+{% endblock %}
+
+
+
+{% block page_body_main_content %}
+    <div class="main" id="main" dir="rtl">
+    <div class="header">
+            <h1> עגלת קניות </h1>
+    </div>
+
+    <table class="table" id="ShopCart" width="100%"  border="1" align="center">
+        <tr>
+            <th class="table" width="20%"> <label class="col">תמונה</label> </th>
+            <th class="table" width="40%" > <label class="col" id="pd_t">מוצר</label> </th>
+            <th class="table" width="10%" > <label class="col">מחיר</label> </th>
+            <th class="table" width="15%" > <label class="col">כמות</label> </th>
+            <th class="table" width="15%" > <label class="col">הסר</label> </th>
+        </tr>
+        {% for entry in entries %}
+        <tr>
+            <td align="center"> <br>
+                <img class="shop_pic_items" class="ShopPicCart" src="{{ entry.product_img }}" alt="{{ entry.product_name }}" width="30% "height= "10%">
+            </td>
+            <td class="headerCart"><div class="product-title">{{  entry.product_name  }}</div>
+                <p class="product-description">{{ entry.product_discription }}</p></td>
+            <td class="headerCart price"><div class="product-price">{{entry.product_price}}</div></td>
+            <td align="center">
+                {{ entry.quantity }}
+            </td>
+            <td align="center">
+                <form action="/ShoppingCart" method="POST">
+                    <input type="hidden" value="{{ entry.product_id }}" name="prod_id">
+                    <input type="hidden" value="remove" name="req">
+                    <input type="hidden" name="typeofcake" value="cake">
+                    <button class="ShopPicCart deleteButton" type="submit"> הסר </button> <br><br>
+               </form>
+            </td>
+        </tr>
+        {% endfor %}
+    {% for customiz in customized %}
+        <tr>
+            <td align="center"> <br>
+
+            </td>
+            <td class="headerCart"><div class="product-title">עוגה מעוצבת</div>
+                <p class="product-description"> {{customiz[0]}}, {{customiz[1]}},{{customiz[2]}},{{customiz[3]}},{{customiz[5]}} </p></td>
+            <td class="headerCart price"><div class="product-price">{{customiz[6]}}</div></td>
+            <td align="center">
+                1
+            </td>
+            <td align="center">
+                <form action="/ShoppingCart" method="POST">
+                    <input type="hidden" value="{{customiz[7]}}" name="transaction_number">
+                    <input type="hidden" value="remove" name="req">
+                    <input type="hidden" name="typeofcake" value="customized">
+                    <button class="ShopPicCart deleteButton" type="submit"> הסר </button> <br><br>
+               </form>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <br><br>
+
+    <br><br>
+
+    <div class="totals" dir="rtl">
+        <table width="16%"  border="0" align="left">
+            <tr>
+                <td width="8%" align="center"><p class= "sum_text" >     סיכום ביניים </p></td>
+                <td width="8%" ><p class="total-price-text" id="totalPriceText">{{ total }} ₪ </p>
+                    <input type="hidden" name="totalPrice" id="totalPrice" value="0" />
+                </td>
+            </tr>
+            <tr>
+                <td> <label class= "sum_text">מע"מ 17%</label> </td>
+                <td><p class="tax-price-text" id="taxPriceText"> {{ tax }} ₪ </p>
+                    <input type="hidden" name="taxtotalPrice" id="taxtotalPrice" value="0" />
+                </td>
+            </tr>
+            <tr>
+                <td> <label class= "sum_text" >משלוח</label> </td>
+                <td><p class="delivries-price-text" id="delivriesPriceText"> 35  ₪  </p>
+                </td>
+            </tr>
+            <tr>
+                <td> <label class= "sum_text" >סה"כ</label> </td>
+                <td><p class="final-price-text" id="finalPriceText"> {{ summery }}  ₪ </p>
+                    <input type="hidden" name="finaltotalPrice" id="finaltotalPrice" value="0" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"> <button class="checkout" onclick="window.location.href='/CheckOut'" >מעבר לתשלום</button> </td>
+            </tr>
+        </table>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+    </div>
+{% endblock %}
+

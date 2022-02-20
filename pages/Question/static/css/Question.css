@@ -1,0 +1,48 @@
+
+#header_txt{
+    font-family: "Calibri Light", serif;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(199, 146, 116);
+
+}
+
+.collapsible {
+  margin-right: 10vh;
+  margin-left: 10vh;
+  width: 70%;
+  text-align:right;
+  background-color: rgba(255, 255, 255, 0.795);
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  font-family: "Calibri Light", serif;
+}
+
+.active, .collapsible:hover {
+  background-color: rgb(225, 176, 156);
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.content {
+  margin-right: 10vh;
+  text-align:right;
+  padding: 15px;
+  display: none;
+  background-color: transparent;
+  font-family: "Calibri Light", serif;
+  color: black;
+  height: 3vh;
+  font-size: 17px;
+}

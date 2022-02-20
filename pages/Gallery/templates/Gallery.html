@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'gallery Page' %}
+
+{% block body %} onload="showSlides(1, 0), showSlides(1, 1)" {% endblock %}
+
+{% block page_body_css %}
+    <link rel="stylesheet" href="{{ url_for('Gallery.static', filename='css/Gallery.css') }}"/>
+{% endblock %}
+
+
+{% block page_body_main_content %}
+     <div class="main" id="main" dir="rtl">
+    <div class="header" >
+            <h1>גלריית התמונות שלי </h1>
+        </div>
+
+        <table width="90%"  border="0" align="center">
+            <tr >
+                <td width="10%" ><a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+                    </td>
+                <td width="70%">
+                    <div class="slideshow-container">
+                        {% for entry in entries %}
+                            <div class="mySlides1">
+                                <img src="{{ entry[1] }}" style="width:50%">
+                            </div>
+                        {% endfor %}
+                    </div>
+                </td>
+                <td width="10%">   <a class="next" onclick="plusSlides(1, 0)"> &#10095;</a>   </td>
+            </tr>
+        </table>
+ </div>
+
+{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('Gallery.static', filename='js/Gallery.js') }}"></script>
+{% endblock %}

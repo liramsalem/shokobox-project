@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'shoko_box' %}
+
+{% block page_body_css %}
+    <link rel="stylesheet" href="{{ url_for('Home.static', filename='css/Home.css') }}"/>
+{% endblock %}
+
+
+{% block page_body_main_content %}
+    <div class="main" id="main"  class="centered">
+    <br><br><br>
+        <table width="60%"  border="0" align="center">
+            <tr >
+                <td width="20%" height="150%" align="center">
+                    <a href="/Classes" > <p class="sec_text"> סדנאות <br> <img class="pic1" src="/Home/media/classHomePage.png" alt="classes" style="width: 200px; float: center;" > </p> </a>
+                </td>
+                <td width="20%" align="center">
+                    <a href="/CustomizedCake" > <p class="sec_text"> עיצוב אישי <br> <img class="pic1" src ="/Home/media/customizedHomePage.jpg" alt="our cakes" style="width: 200px; float: center;" > </p> </a>
+                </td>
+                <td width="20%" height="150%" align="center" >
+                    <a href="/Cakes" > <p class="sec_text"> העוגות שלי <br> <img class="pic1" src ="/Home/media/cakeHomePage.png" alt="customeize" style="width: 200px; float: center;" > </p> </a>
+                </td>
+            </tr>
+            <tr >
+                <td width="20%" align="center"></td>
+                <td width="20%" height="150%" align="center">
+                    <button class="btn_HP" onclick="window.location.href='/SignIn'"> התחברות</button>
+                </td>
+                <td width="20%" height="150%" align="center"></td>
+            </tr>
+            <tr >
+                <td width="20%" align="center"></td>
+                <td width="20%" height="150%" align="center">
+                    <br><br>
+                    <button class="btn_HP" onclick="window.location.href='/Gallery'"> לגלריית התמונות</button>
+                </td>
+                <td width="20%" height="150%" align="center"></td>
+            </tr>
+
+        </table>
+    </div>
+{% endblock %}
+
+
+

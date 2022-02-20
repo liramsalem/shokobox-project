@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Question & Answers' %}
+
+{% block page_body_css %}
+    <link rel="stylesheet" href="{{ url_for('Question.static', filename='css/Question.css') }}"/>
+{% endblock %}
+
+
+{% block page_body_main_content %}
+    <div class="main" id="main" dir="rtl" >
+    <div class="header" >
+           <h1> שאלות ותשובות </h1>
+        </div>
+        <p id="header_txt">בעמוד זה רכזתי עבורכם תשובות לשאלות אותם אני נשאלת הרבה, במידה ודרוש לכם מידע נוסף, מוזמנים ליצור עמי קשר ישירות.</p>
+
+   <div class="Question" dir="rtl" >
+       <br><br>
+
+       {% for entry in entries %}
+           <button class="collapsible" onclick="openQuestion('content{{ entry[0] }}')">{{ entry[1] }} </button>
+           <div class="content" id="content{{ entry[0] }}" style="display: none"> {{ entry[2] }} </div>
+           <br><br>
+       {% endfor %}
+
+       <br><br>
+   </div>
+        <br><br>
+    </div>
+{% endblock %}
+
+
+{% block page_body_js %}
+    <script src="{{ url_for('Question.static', filename='js/Question.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Contact' %}
+
+{% block page_body_css %}
+    <link rel="stylesheet" href="{{ url_for('Contact.static', filename='css/Contact.css') }}"/>
+{% endblock %}
+
+
+{% block page_body_main_content %}
+    <div class="main" id="main" dir="rtl">
+    <div class="header" >
+            <h1> צור קשר </h1>
+        </div>
+
+        {% if msg=='success_msg' %}
+            <p class="msg_to_user"> תגובתך התקבלה בהצלחה! </p>
+        {% endif %}
+
+        <div class="ways" dir="rtl">
+            <h2 class="title">מוזמנים ליצור קשר לכל שאלה ולהזמנות </h2>
+            <p><ul><li>אורנים 9, שדרות</li></ul></p>
+            <p class="text_ways" >יצירת קשר:</p>
+            <p class="h_text" id="note" > מענה בין השעות 11:00-20:00 </p>
+            <ul>
+                <li>טלפון: 052-8665678</li>
+                <li> אימייל: shokobox@gmail.com</li>
+                <li> אינסטגרם: shoko_box</li>
+            </ul>
+            <form action="/form_contact_us" method="get">
+                <p class="text_ways" >כתבו לנו:</p>
+                <textarea id="textarea_contact" name="subject" placeholder="רצינו לספר לך ש..." dir="rtl"></textarea><br><br>
+                <button type="submit" class="Contactbtn"> שלח </button>
+             </form>
+
+        </div>
+
+        <div class="map_contact">
+            <iframe id="map_box" src="https://maps.google.com/maps?q=oranim%209,%20sderot&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0"  ></iframe><a href="https://123movies-a.com"></a>
+            <div class="waysNavigation">
+                <a href="https://moovitapp.com/israel-1/poi/en" target="_blank">
+                <img src="Contact/media/moovit_image.png" alt="Moovit symbol" width="50px"></a>
+                <a href="https://www.waze.com/he/live-map?utm_campaign=waze_website" target="_blank">
+                <img src="Contact/media/waze_image.png" alt=" Waze symbol" width="50px"></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

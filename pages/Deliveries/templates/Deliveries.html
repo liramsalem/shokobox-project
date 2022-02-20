@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Deliveries' %}
+
+{% block page_body_css %}
+    <link rel="stylesheet" href="{{ url_for('Deliveries.static', filename='css/Deliveries.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+    <div class="main" id="main" dir="rtl">
+    <div class="header" >
+         <h1 id="header" > משלוחים </h1>
+        </div>
+
+        <div class="box_right" dir="rtl">
+            <p id="policy_text"><b></b></p>
+            <div class="policy" id="policy" align="center"><p class="policy"></p>
+                    <b>מדיניות משלוחים</b><br>
+                    לא ניתן להזמין מהרגע להרגע, אלא רק ליום למחרת/ כל תאריך אחר שתבחרו.<br>
+                   ניתן לבחור משלוח / איסוף עצמי מהבייקרי (אורנים 9, שדרות). <br>
+                    הזמנות (של עוגות מוכנות) ליום שישי ניתן לבצע עד יום חמישי בשעה 13:00.<br>
+                    איסוף עצמי- ניתן בין השעות 11:00-20:00, בשישי בין השעות 10:00-13:00.<br>
+                    המשלוחים יגיעו באמצעו שבוע בין השעות 15:00-20:30, בשישי בין השעות 8:30-15:00.<br><br>
+                   <b> אין התחייבות לשעת הגעת המשלוח, אנו תלויים בחברת שליחויות חיצונית!</b><br><br>
+                   משלוחים לכל חלקי הארץ.  <br><br>
+
+                   <b> עלות משלוח 35 ₪ </b><br><br>
+                    מענה עבור הזמנות- 052-8665678, בין השעות 11:00-20:00. <br>
+            </div>
+         </div>
+    </div>
+{% endblock %}
+
+

@@ -1,0 +1,21 @@
+{% block Top_Navigation_Bar %}
+    <div class="TopNavigationBar" id="TopNav" dir="rtl">
+        <button id="openbtn" class="openbtn" onclick="openNav()"> <img class="top_nav_btn" id="openbtn_img" src="Top_Navigation_Bar/media/nativBar.png"  style="width: 40px";  ></button>
+        <button class="shoppingCartbtn" onclick="window.location.href='/ShoppingCart'" > <img class="top_nav_btn" id="shoppingCartbtn_img" src="Top_Navigation_Bar/media/shoppingBag.png" style="width: 40px"; > </button>
+        <button class="classesbtn" onclick="window.location.href='/Classes'"> <img class="top_nav_btn" id="classes_img" src="Top_Navigation_Bar/media/classIcon.png" style="width: 40px" ></button>
+        <button class="deliverybtn" onclick="window.location.href='/Deliveries'">  <img class="top_nav_btn" id="delivery_img" src="Top_Navigation_Bar/media/delivery.png" style="width: 40px" > </button>
+        {%  if session.user_name %}
+            <button class="SignInbtn" onclick="window.location.href='/LogOut'" >  <img class="top_nav_btn" id="LogOut_img" class="LogOut_img" src="Top_Navigation_Bar/media/logoutIcon.png" style="width: 40px"  > </button>
+            <h1 id="hello_user_name"> שלום, {{ session.user_name }}</h1>
+           <div id="logo_in_the_side_log_in">
+           <a href="/Home"><img id="S_B nav logo" src="Top_Navigation_Bar/media/ShokoBox logo .png" alt="shoko box logo" height="180px"></a>
+           </div>
+        {% else %}
+            <button class="SignInbtn" onclick="window.location.href='/SignIn'" >  <img class="top_nav_btn" id="SignIn_img" class="SignIn_img" src="Top_Navigation_Bar/media/logInIcon.png" style="width: 40px"  > </button>
+        {% endif %}
+
+        <div id="logo_in_the_side">
+           <a href="/Home"><img id="S_B nav logo" src="Top_Navigation_Bar/media/ShokoBox logo .png" alt="shoko box logo" height="180px"></a>
+        </div>
+    </div>
+{% endblock %}

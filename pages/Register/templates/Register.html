@@ -1,0 +1,77 @@
+  <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Register' %}
+
+{% block page_body_css %}
+    <link rel="stylesheet" href="{{ url_for('Register.static', filename='css/Register.css') }}"/>
+{% endblock %}
+
+
+{% block page_body_js %}
+    <script src="{{ url_for('Register.static', filename='js/Register.js') }}"></script>
+{% endblock %}
+
+
+{% block page_body_main_content %}
+    <div class="main" id="main" >
+     <table width="100%"  border="0" align="center">
+        <tr align="center">
+            <td colspan = "3">
+                    {% if msg=='error' %}
+                        <p class="msg_to_user"> המשתמש כבר קיים במערכת </p>
+                    {% endif %}
+                <br>
+            </td>
+         </tr>
+        <tr >
+            <td width="45%" height="150%" align="center">
+                <img src="Register/media/Welcome-PNG.png"; style="width: 60%"  >
+                <h1>הירשם עכשיו</h1>
+                <h2> :) כל כך שמחה שאתה פה! בוא נתחיל </h2>
+            </td>
+            <td width="10%"></td>
+            <td width="45%" height="150%">
+                <form id="registerform" action="/Register_form" method="post" >
+                    <div class="input-container">
+                      <i class="fa fa-user icon"></i>
+                      <input class="input-field" id="fname" type="text" placeholder="* שם פרטי" name="firstnm" required>
+                    </div>
+
+                    <div class="input-container">
+                        <i class="fa fa-user icon"></i>
+                        <input class="input-field" id="lname" type="text"  placeholder="* שם משפחה" name="lastnm" required>
+                    </div>
+
+                    <div class="input-container">
+                        <i class="fa fa-birthday-cake icon"></i>
+                        <input class="input-field" type="date" placeholder="יום הולדת" name="birthday">
+                    </div>
+
+                    <div class="input-container">
+                        <i class="fa fa-phone icon"></i>
+                        <input class="input-field" id="phone" type="phone" placeholder="פלאפון" name="phone">
+                    </div>
+
+                    <div class="input-container">
+                      <i class="fa fa-envelope icon"></i>
+                      <input class="input-field" id="email"  type="text" placeholder="* אימייל" name="email" required>
+                    </div>
+
+                    <div class="input-container">
+                      <i class="fa fa-key icon"></i>
+                      <input class="input-field" id="password" type="password" placeholder="* סיסמא" name="psw" required>
+                    </div>
+                    </form>
+
+                    <button onclick="validateRegisterForm()" class="btn"> <b> הירשם </b></button>
+
+
+            </td>
+        </tr>
+    </table>
+    </div>
+{% endblock %}
+

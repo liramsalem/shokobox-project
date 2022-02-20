@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Cakes' %}
+
+{% block page_body_css %}
+    <link rel="stylesheet" href="{{ url_for('Cakes.static', filename='css/Cakes.css') }}"/>
+{% endblock %}
+
+
+{% block page_body_main_content %}
+    <div class="main" id="main" dir="rtl">
+        <div class="header">
+            <h1> העוגות שלי </h1>
+        </div>
+
+        <div id="myBtnContainer">
+            <button class="btn_filter active" onclick="filterSelection('all')"> הראה הכל</button>
+            <button class="btn_filter" onclick="filterSelection('1')"> עוגות פס</button>
+            <button class="btn_filter" onclick="filterSelection('2')"> עוגות מוס-קרם</button>
+            <button class="btn_filter" onclick="filterSelection('3')"> עוגיות </button>
+        </div>
+
+                <div class="row">
+                    {% for entry in entries %}
+                    <div class="column {{ entry[0] }}">
+                        <div class="content">
+                            <a href="Product?prod_id={{ entry[1] }}" > <img class="product_pic" src="{{ entry[3] }}" alt="alphahores" style="width:100%"> </a>
+                            <h4 class="name"> {{entry[4]}} <br>{{entry[5]}} ₪ </h4>
+                        </div>
+                    </div>
+                    {% endfor %}
+</div>
+{% endblock %}
+
+
+{% block page_body_js %}
+    <script src="{{ url_for('Cakes.static', filename='js/Cakes.js') }}"></script>
+{% endblock %}

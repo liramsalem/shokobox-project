@@ -1,0 +1,91 @@
+
+
+.product-title {
+    margin-right: 20px;
+    font-weight:bold;
+}
+
+.product-description {
+    margin: 5px 20px 5px 0;
+    line-height: 1.4em;
+}
+
+.quantity-field{
+    width: 30%;
+  }
+
+.deleteButton{
+    border: 0;
+    padding: 4px 8px;
+    font-family: Calibri, serif;
+    background-color: #c66;
+    color: #fff;
+    font-weight:bold;
+    font-size: 14px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .deleteButton:hover {
+    background-color: #a44;
+  }
+
+  .group:before,
+.group:after {
+    content: '';
+    display: table;
+}
+.group:after {
+    clear: both;
+}
+.group {
+    zoom: 1;
+}
+
+/* Apply clearfix in a few places */
+.shopping-cart, .column-labels, .product, .totals-item {
+    @extend.group;
+  }
+
+  /* Apply dollar signs */
+.product-price::after {
+    content: ' ₪';
+  }
+
+  .totals-item {
+    float: left;
+    clear: both;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.sum_text {
+    float: right;
+    clear: both;
+    text-align: right;
+    font-weight:bold;
+    font-size: 15px;
+  }
+
+
+  #finalPriceText{
+    font-weight:bold;
+  }
+
+
+  .checkout {
+    border: 0;
+    margin-top: 10px;
+    padding: 6px 25px;
+    background-color: rgba(255, 255, 255, 0.795);
+    color: rgb(148, 102, 86);
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .checkout:hover {
+    background-color:  rgb(225, 176, 156);
+  }
+
+

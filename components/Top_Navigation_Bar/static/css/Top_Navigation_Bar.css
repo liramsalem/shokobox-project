@@ -1,0 +1,100 @@
+
+.TopNavigationBar {
+  position: -webkit-sticky;
+  position: sticky;
+    background-color: #E2DAD5;
+    display:flex;
+    box-shadow: 0 1vh 2vh 0 rgba(0,0,0,0.5);
+    text-align: center;
+    top: 0;
+    justify-content:flex-start ;
+    height: 120px;
+    z-index: 2;
+}
+
+#logo_in_the_side{
+    margin-right: 60%;
+    margin-top: -2.5%;
+}
+
+#logo_in_the_side_log_in{
+    margin-right: 50%;
+    margin-top: -2.5%;
+}
+
+#hello_user_name{
+    text-align: center;
+     font-size: 30px;
+}
+/*---------------------buttons top bar-------------------*/
+
+/*---------open button---------*/
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #E2DAD5;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  .openbtn:hover {
+    background-color: #E2DAD5;
+  }
+
+
+/*---------classes button---------*/
+.classesbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #E2DAD5;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    margin-top:0;
+  }
+  .classesbtn:hover {
+    background-color: #E2DAD5;
+  }
+
+
+  /*---------shopping cart button---------*/
+  .shoppingCartbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #E2DAD5;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  .shoppingCartbtn:hover {
+    background-color: #E2DAD5;
+  }
+
+
+  /*---------deliverybtn button---------*/
+  .deliverybtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #E2DAD5;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    margin-top:0;
+  }
+  .deliverybtn:hover {
+    background-color: #E2DAD5;
+  }
+
+/*---------aboutUsbtn button---------*/
+  .SignInbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #E2DAD5;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    margin-top:0;
+  }
+  .SignInbtn:hover {
+    background-color: #E2DAD5;
+  }

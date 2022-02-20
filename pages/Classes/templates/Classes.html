@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Classes' %}
+
+{% block body %} onload="class_option1()" {% endblock %}
+
+{% block page_body_css %}
+    <link rel="stylesheet" href="{{ url_for('Classes.static', filename='css/Classes.css') }}"/>
+{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('Classes.static', filename='js/Classes.js') }}"></script>
+{% endblock %}
+
+
+{% block page_body_main_content %}
+    <div class="main" id="main" dir="rtl">
+    <div class="header">
+            <h1> הסדנאות שלי </h1>
+        </div>
+
+        {% if msg=='success_msg' %}
+            <p class="msg_to_user">
+                הרשמתך נקלטה בהצלחה! <br>
+                פרטי הסדנא נשלחו לכתובת המייל, לכל שינוי יש ליצור קשר טלפוני
+            </p>
+        {% endif %}
+
+        {% if msg=='success_msg_class_contact' %}
+            <p class="msg_to_user"> פרטיך התקבלו בהצלחה! ניצור עמך קשר בהקדם </p>
+        {% endif %}
+
+        {% if msg=='error' %}
+            <p class="msg_to_user"> מצטערים, מספר המקומות אזל! </p>
+        {% endif %}
+
+        {% if msg=='sign_in' %}
+            <p class="msg_to_user"> על מנת להירשם לסדנא יש להתחבר לאתר! </p>
+        {% endif %}
+
+        <table width="60%"  border="0" align="center">
+            <tr align="center">
+                <td width="20%" height="150%" >
+                    <p class="title_name"> סדנת זילוף </p>
+                </td>
+                <td width="20%" >
+                    <p class="title_name"> עוגות בחושות </p>
+                </td>
+                <td width="20%" height="150%">
+                    <p class="title_name"> המיוחדים שלי </p>
+                </td>
+            </tr>
+            <tr align="center" >
+                <td>
+                    <video width="320" height="240" controls>
+                        <source src="Classes/media/zilof.mp4" type="video/mp4">
+                    </video>
+                </td>
+                <td>
+                    <video width="320" height="240" controls>
+                        <source src="Classes/media/bhosot.mp4" type="video/mp4">
+                    </video>
+                </td>
+                <td>
+                    <video width="320" height="240" controls>
+                        <source src="Classes/media/ourspaciel.mp4" type="video/mp4">
+                    </video>
+                </td>
+
+            </tr>
+            <tr align="center">
+                <td >
+                    <div class="popup" onclick="popupFunction('text1')">לחץ כאן
+                        <span class="popuptext" id="text1">
+                             בסדנת הזילוף נלמד את הטכניקות החדישות לייצור עוגה מושלמת, קרם חזק ויציב, מתכון ושימוש בתבניות שונות. <br>
+                            הדרכה מלאה בת 4 שעות אשר בסיומה יוצאים עם עוגה מקושטת וטעימה.
+                        </span>
+                    </div>
+                </td>
+                <td>
+                    <div class="popup" onclick="popupFunction('text2')">לחץ כאן
+                        <span class="popuptext" id="text2">
+                             תמיד אהבתם איכות? הגעתם למקום נכון! <br>
+                             בואו להכין איתי עוגה טעימה ומרשימה, אחת כזאת שאי אפשר להסביר במילים את הטעם שלה... <br>
+                             הדרכה מלאה בת 4 שעות.
+                        </span>
+                    </div>
+                </td>
+                <td>
+                    <div class="popup" onclick="popupFunction('text3')">לחץ כאן
+                        <span class="popuptext" id="text3">
+                            בכיוון של משהו מושחת? הגעתם למקום הנכון! <br>
+                            מזמינה אותכם לסדנא בה תכירו את השגעונות שלי מקרוב, ותצאו עם קינוחים מרשימים. <br>
+                            סדנה בת 4 שעות בה תצאו עם קופסת ההפתעות שלי. <br>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <table width="60%" id=sec_table border="0" align="center">
+            <tr align="center">
+                <td>
+                    <p id="title_name"> קביעת סדנאות לחודש הקרוב <br>
+                        <form name="form1" id="form1" action="/form1_classes" method="get">
+                            סוג סדנא: <select name="class_name" id="class_name">
+                            <option value="" selected="selected">בחר סדנא</option>
+                            </select>
+                            <br><br>
+                            תאריך: <select name="class_date" id="class_date">
+                              <option value="" selected="selected">בחר תאריך</option>
+                            </select>
+                            <br><br>
+                            שעה: <select name="class_time" id="class_time">
+                              <option value="" selected="selected">בחר שעה</option>
+                            </select>
+                            <br><br>
+                            <button class="sub_btn" type="submit" id="next_class"> שלח </button>
+                          </form>
+                    </p>
+
+
+                </td>
+                <td>
+                    <p id="title_name"> מעוניין בתיאום סדנא אישית? <br>
+                        השאר פרטים ונחזור אליך בהקדם
+                    </p>
+                    <form name="form2" id="form2" action="/form2_classes" method="get">
+                        <label for="fullname">שם מלא   <i class="fa fa-user"></i> </label> <br><br>
+                        <input type="text" id="fullname" name="fullname" placeholder="ישראלי ישראל *" required> <br><br>
+                        <label for="phone">טלפון   <i class="fa fa-phone"></i> </label><br><br>
+                        <input type="text" id="phone" name="phone" placeholder="0505555555 *" required><br><br>
+                        <button class="sub_btn" type="submit" id="personal_class" onclick="validateClassesForm()"> שלח </button>  <br>
+                    </form>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}
+
+

@@ -1,0 +1,13 @@
+#header_txt{
+    font-family: "Calibri Light", serif;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(199, 146, 116);
+}
+
+.text{
+    text-decoration:none;
+    color: rgb(148, 102, 86);
+}
+

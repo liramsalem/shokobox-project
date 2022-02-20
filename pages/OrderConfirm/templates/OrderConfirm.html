@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'OrderConfirm' %}
+
+{% block page_body_css %}
+    <link rel="stylesheet" href="{{ url_for('OrderConfirm.static', filename='css/OrderConfirm.css') }}"/>
+{% endblock %}
+
+{% block page_body_main_content %}
+    <div class="main" id="main" dir="rtl">
+        <div class="header" >
+            <h1 id="header" > הזמנתך בוצעה בהצלחה :) </h1>
+        </div>
+        <p class="title_text">  מספר הזמנה:  <b> {{ order_id }} </b> </p>
+        <p class="details"> להלן פרטי הזמנתך:</p>
+        <br><br>
+             <table width="50%"  border="1" align="center">
+             <tr>
+                <th class="table" width="20%"> <label class="col">תמונה</label> </th>
+                <th class="table" width="40%" > <label class="col" id="pd_t">מוצר</label> </th>
+                <th class="table" width="15%" > <label class="col">כמות</label> </th>
+            </tr>
+            {% for entry in res %}
+            <tr>
+                <td align="center"> <br>
+                    <img class="shop_pic_items" class="ShopPicCart" src="{{ entry.product_img }}" alt="{{ entry.product_name }}" width="30% "height= "10%">
+                </td>
+                <td class="headerCart"><div class="product-title">{{  entry.product_name  }}</div>
+                    <p class="product-description">{{ entry.product_discription }}</p></td>
+                <td align="center">
+                    {{ entry.quantity }}
+                </td>
+            </tr>
+            {% endfor %}
+            {% for customiz in customized %}
+            <tr>
+                <td align="center"> <br>
+
+                </td>
+                <td class="headerCart"><div class="product-title">עוגה מעוצבת</div>
+                    <p class="product-description"> {{customiz[0]}}, {{customiz[1]}},{{customiz[2]}},{{customiz[3]}},{{customiz[5]}} </p></td>
+                <td align="center">
+                    1
+                </td>
+            </tr>
+            {% endfor %}
+            </table>
+        <p class="title_text">  פרטי הזמנה נשלחו לכתובת המייל <br>
+            לכל בעיה ניתן ליצור קשר בטלפון: 052-8665678, בין השעות 11:00-20:00.  </p>
+    </div>
+{% endblock %}
+
+

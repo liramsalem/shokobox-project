@@ -1,0 +1,67 @@
+
+#header_about_as{
+    background-color: #FFCCCC;
+}
+
+.box_right{
+    width: 50%;
+    padding: 20px;
+    border-style: double;
+    margin-right: 5vh;
+    font-family: Calibri, serif;
+    border-radius: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#writer_text{
+    font-size: 25px;
+}
+
+.box_left{
+    width: 50%;
+    float: left;
+    margin-left: -15vh;
+    margin-top: 2vh;
+}
+
+.aboutMe{ /* text- the story*/
+  font-size: 18px;
+  line-height: 35px;
+}
+
+.Order_button_pages {
+  cursor: pointer;
+  box-shadow: 0 1vh 2vh 0 rgba(0,0,0,0.5);
+  background-color: rgba(255, 255, 255, 0.795);
+  color: rgb(148, 102, 86);
+  font-family: textFont;
+  font-size: 15px;
+  padding: 14px 25px;
+  text-align: right;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Calibri, serif;
+  border-radius: 12px;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: none;
+  margin-right: 30vh;
+  opacity: 0.9;
+}
+.Order_button_pages:hover {
+  background-color: rgb(225, 176, 156);
+}
+
+
+@media only screen and (max-width: 600px) {
+  #liorPhoto{
+     width:150px;
+     height:150px;
+  }
+  .Order_button_pages{
+    width: 70%;
+    margin-right: 10vh;
+  }
+}

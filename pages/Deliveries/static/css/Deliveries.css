@@ -1,0 +1,31 @@
+#header{
+    text-align: center;
+
+}
+
+.header {
+    color: rgb(148, 102, 86);
+    width: 50%;
+    text-align: center;
+    margin-right: 28%;
+}
+
+.box_right{
+    width: 50%;
+    padding: 20px;
+    border-style: double;
+    margin-right: 25%;
+    font-family: Calibri, serif;
+    border-radius: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#policy_text{
+    font-size: 25px;
+}
+
+
+.policy{ /* text- the story*/
+  font-size: 18px;
+  line-height: 35px;
+}

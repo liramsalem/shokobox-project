@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Product' %}
+
+{% block page_body_css %}
+    <link rel="stylesheet" href="{{ url_for('Product.static', filename='css/Product.css') }}"/>
+{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('Product.static', filename='js/Product.js') }}"></script>
+{% endblock %}
+
+{% block page_body_main_content %}
+
+
+    <div class="main" id="main" dir="rtl" >
+     <table width="80%"  border="0"  align="center">
+            <td width="45%" height="150%" align="center">
+                <h1 id="name_of_cake"> {{prod_name}} </h1>
+                <h1 id="price"> {{ prod_price }} ₪ </h1>
+                <h2 id="discription"> {{prod_desc}} </h2>
+                <form action="/ShoppingCart" method="POST">
+                    <input type="hidden" value="{{ prod_id }}" name="prod_id">
+                    <input type="hidden" value="add" name="req">
+                    <input type="hidden" name="typeofcake" value="cake">
+
+                    <button id="add_to_cart_btn" type="submit" > הוספה לסל</button> <br><br>
+                </form>
+                <p id="small text"> <b> אותיות קטנות</b> <br> <br>
+                    שעות המשלוחים בימים א-ה בין 15:00-20:30 וביום ו בין 8:30-15:00. השליח יצור עמכם קשר. <br>
+                    איסוף עצמי ניתן לקחת משעה 11:00! אין צורך להמתין בתור בהזמנת איסוף עצמי. * לא ניתן לבצע <br>
+                    שינויים בעוגות/ מארזים. * לא ניתן להוסיף כיתוב אישי על העוגות. * אין אפשרות להתחייב על שעת <br>
+                    הגעת המשלוח. * יש לשים לב לבחירת תאריך האספקה! * התמונות להמחשה בלבד. * צבע <br>
+                    המגש/הטופר יכולים להשתנות לפי המלאי. <br>
+                </p>
+            </td>
+            <td width="10%"></td>
+            <td width="45%" height="150%" align="center">
+                <img id="product_pic" src="{{ prod_img }}" alt="{{ prod_name }}" height="400px" >
+            </td>
+
+        </table>
+    </div>
+
+
+{% endblock %}
+

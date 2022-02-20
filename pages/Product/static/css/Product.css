@@ -1,0 +1,43 @@
+  #add_to_cart_btn {
+    cursor: pointer;
+    box-shadow: 0 1vh 2vh 0 rgba(0,0,0,0.5);
+    background-color: rgba(255, 255, 255, 0.795);
+    color: rgb(148, 102, 86);
+    text-align: right;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: Calibri, serif;
+    border-radius: 12px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: none;
+    padding: 10px 24px;
+    position: center;
+    transition: margin 0.5s;
+  }
+
+  #add_to_cart_btn:hover {
+    background-color: rgb(225, 176, 156);
+  }
+
+  #name_of_cake{
+    background-color: #FFCCCC;
+    color: rgb(148, 102, 86);
+    width: 50%;
+  }
+  #price{
+    color: rgb(148, 102, 86);
+  }
+
+  #discription{
+      font-size: medium;
+  }
+
+  #quantity{
+    width: 10%;
+  }
+
+  .main{
+      margin-top: 40px;
+  }
+
